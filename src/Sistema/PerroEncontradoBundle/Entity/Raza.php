@@ -28,6 +28,12 @@ class Raza
      */
     private $nombre;
 
+    /**
+    *
+    * @ORM\ManyToMany(targetEntity="Perro", mappedBy="raza")
+    */
+    private $perros;
+
 
     /**
      * Get id

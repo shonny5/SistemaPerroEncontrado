@@ -37,6 +37,12 @@ class Perro
     private $estado;
 
     /**
+    *
+    * @ORM\Column(name="color", type="string", length=255)
+    */
+    private $color;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="fecha_ingreso", type="datetime")
@@ -61,6 +67,11 @@ class Perro
     * @ORM\ManytoOne(targetEntity="Propietario", inversedBy="perros_propios")
     */
     private $propietario;
+    /**
+    *
+    * @ORM\ManyToMany(targetEntity="Raza", inversedBy="perros")
+    */
+    private $razas;
 
     /**
      * Get id
