@@ -5,6 +5,7 @@ namespace Sistema\PerroEncontradoBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityRepository;
 
 class PerroType extends AbstractType
 {
@@ -16,13 +17,46 @@ class PerroType extends AbstractType
     {
         $builder
             ->add('ubicacion')
-            ->add('estado')
+            ->add('estado', 'choice', array(
+                    'choices' => array(
+                        "Adoptado",
+                        "En adopcion",
+                    )
+                )
+            )
             ->add('color')
-            ->add('fechaIngreso')
-            ->add('fechaSalida')
-            ->add('usuario_de_rescate')
-            ->add('propietario')
-            ->add('razas')
+            ->add('fechaIngreso', 'datetime', array(
+                        'placeholder' => 'Ingrese fecha de ingreso del perro.',
+                )
+            )
+            ->add('fechaSalida', 'datetime' array(
+                        'placeholder' => 'Ingrese fecha de adopcion del perro.'
+                )
+            )
+            ->add('usuario_de_rescate', 'entity', array(
+                    'class'        => 'SistemaPerroEncontradoBundle:Usuario'
+                    'query_builer' => function(EntityRepository $er){
+                        return $er->CreateQueryBuilder('u')
+                                  ->orderBy('u.nombre', 'ASC')
+                    },
+                )
+            )
+            ->add('propietario', 'entity', array(
+                    'class'        => 'SistemaPerroEncontradoBundle:Propietario',
+                    'query_builer' => function(EntityRepository $er){
+                        return $er->CreateQueryBuilder('p')
+                                  ->orderBy('p.nombre', 'ASC')
+                    },
+                )
+            )
+            ->add('razas', 'entity', array(
+                    'class'         => 'SistemaPerroEncontradoBundle:Raza'
+                    'query_builder' => function(EntityRepository $er){
+                        return $er->CreateQueryBuilder('r')
+                                  ->orderBy('r.nombre', 'ASC')
+                    },
+                )
+            )
         ;
     }
     

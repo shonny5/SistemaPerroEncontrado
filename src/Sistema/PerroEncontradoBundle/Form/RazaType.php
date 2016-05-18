@@ -16,7 +16,6 @@ class RazaType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('perros')
         ;
     }
     
