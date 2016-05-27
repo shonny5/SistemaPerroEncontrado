@@ -58,7 +58,7 @@ class Perro
 
     /**
     *
-    * @ORM\ManyToOne(targetEntity="Usuario", inversedBy="perros_encontrados")
+    * @ORM\ManyToOne(targetEntity="Sistema\PerroUserBundle\Entity\User", inversedBy="perros_encontrados")
     */
     private $usuario_de_rescate;
 

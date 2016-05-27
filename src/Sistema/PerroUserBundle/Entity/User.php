@@ -1,17 +1,16 @@
 <?php
 
-namespace Sistema\PerroEncontradoBundle\Entity;
+namespace Sistema\PerroUserBundle\Entity;
 
-use Sistema\PerroEncontradoBundle\Entity\Perro;
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
- * Usuario
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="Sistema\PerroEncontradoBundle\Entity\UsuarioRepository")
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
  */
-class Usuario
+class User extends baseUser
 {
     /**
      * @var integer
@@ -20,7 +19,7 @@ class Usuario
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -44,8 +43,15 @@ class Usuario
     private $direccion;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="telefono", type="string", length=255)
+     */
+    private $telefono;
+
+    /**
     *
-    * @ORM\OneToMany(targetEntity="Perro", mappedBy="usuario")
+    * @ORM\OneToMany(targetEntity="Sistema\PerroEncontradoBundle\Entity\Perro", mappedBy="usuario_de_rescate")
     */
     private $perros_encontrados;
 
@@ -63,7 +69,7 @@ class Usuario
      * Set nombre
      *
      * @param string $nombre
-     * @return Usuario
+     * @return User
      */
     public function setNombre($nombre)
     {
@@ -86,7 +92,7 @@ class Usuario
      * Set apellido
      *
      * @param string $apellido
-     * @return Usuario
+     * @return User
      */
     public function setApellido($apellido)
     {
@@ -109,7 +115,7 @@ class Usuario
      * Set direccion
      *
      * @param string $direccion
-     * @return Usuario
+     * @return User
      */
     public function setDireccion($direccion)
     {
@@ -127,44 +133,27 @@ class Usuario
     {
         return $this->direccion;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->perros_encontrados = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
-     * Add perros_encontrados
+     * Set telefono
      *
-     * @param \Sistema\PerroEncontradoBundle\Entity\Perro $perrosEncontrados
-     * @return Usuario
+     * @param string $telefono
+     * @return User
      */
-    public function addPerrosEncontrado(\Sistema\PerroEncontradoBundle\Entity\Perro $perrosEncontrados)
+    public function setTelefono($telefono)
     {
-        $this->perros_encontrados[] = $perrosEncontrados;
+        $this->telefono = $telefono;
 
         return $this;
     }
 
     /**
-     * Remove perros_encontrados
+     * Get telefono
      *
-     * @param \Sistema\PerroEncontradoBundle\Entity\Perro $perrosEncontrados
+     * @return string 
      */
-    public function removePerrosEncontrado(\Sistema\PerroEncontradoBundle\Entity\Perro $perrosEncontrados)
+    public function getTelefono()
     {
-        $this->perros_encontrados->removeElement($perrosEncontrados);
-    }
-
-    /**
-     * Get perros_encontrados
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPerrosEncontrados()
-    {
-        return $this->perros_encontrados;
+        return $this->telefono;
     }
 }

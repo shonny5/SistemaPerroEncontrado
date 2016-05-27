@@ -1,12 +1,12 @@
 <?php
 
-namespace Sistema\PerroEncontradoBundle\Form;
+namespace Sistema\PerroUserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class UsuarioType extends AbstractType
+class UserType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -18,6 +18,7 @@ class UsuarioType extends AbstractType
             ->add('nombre')
             ->add('apellido')
             ->add('direccion')
+            ->add('telefono')
         ;
     }
     
@@ -27,7 +28,7 @@ class UsuarioType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Sistema\PerroEncontradoBundle\Entity\Usuario'
+            'data_class' => 'Sistema\PerroUserBundle\Entity\User'
         ));
     }
 
@@ -36,6 +37,6 @@ class UsuarioType extends AbstractType
      */
     public function getName()
     {
-        return 'sistema_perroencontradobundle_usuario';
+        return 'sistema_perrouserbundle_user';
     }
 }
