@@ -20,10 +20,53 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombre')
-            ->add('apellido')
-            ->add('direccion')
-            ->add('telefono')
+            ->add('username', 'text', array(
+                'label' => 'Usuario', 
+                'translation_domain' => 'FOSUserBundle',
+                'required' => false,
+                'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder'=>"Usuario"
+                    ),
+                )
+            )
+            ->add('email', 'email', array(
+                'label' => 'Email', 
+                'translation_domain' => 'FOSUserBundle',
+                'required' => false,
+                'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder'=>"Correo electronico"
+                    ),
+                )
+            )
+            ->add('plainPassword', 'repeated', array(
+                'type' => 'password',
+                'options' => array('translation_domain' => 'FOSUserBundle'),
+                'first_options' => array('label' => 'Ingrese contraseña'),
+                'second_options' => array('label' => 'Reingrese contraseña'),
+                'invalid_message' => 'fos_user.password.mismatch',
+            ))
+            ->add('nombre', 'text', array(
+                    'label' => "Ingrese nombre",
+                    'required' => false,
+                )
+            )
+            ->add('apellido', 'text', array(
+                    'label' => "Ingrese apellido",
+                    'required' => false,
+                )
+            )
+            ->add('direccion', 'text', array(
+                    'label' => "Direccion",
+                    'required' => false,
+                )
+            )
+            ->add('telefono', 'text', array(
+                    'label' => "Ingrese telefono",
+                    'required' => false,
+                )
+            )
         ;
     }
 
@@ -31,6 +74,7 @@ class RegistrationType extends AbstractType
     {
         return 'fos_user_registration';
     }    
+
 
     public function getName()
     {

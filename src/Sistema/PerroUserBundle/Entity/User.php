@@ -2,8 +2,10 @@
 
 namespace Sistema\PerroUserBundle\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+
 
 
 /**
@@ -23,14 +25,14 @@ class User extends baseUser
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Ingrese nombre")
      * @ORM\Column(name="nombre", type="string", length=255)
      */
-    private $nombre;
+    private $nombre;   
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Ingrese apellido")
      * @ORM\Column(name="apellido", type="string", length=255)
      */
     private $apellido;
@@ -44,7 +46,7 @@ class User extends baseUser
 
     /**
      * @var string
-     *
+     * @Assert\NotBlank(message="Ingrese telefono")
      * @ORM\Column(name="telefono", type="string", length=255)
      */
     private $telefono;
