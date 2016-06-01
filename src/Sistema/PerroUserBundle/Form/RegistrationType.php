@@ -43,28 +43,56 @@ class RegistrationType extends AbstractType
             ->add('plainPassword', 'repeated', array(
                 'type' => 'password',
                 'options' => array('translation_domain' => 'FOSUserBundle'),
-                'first_options' => array('label' => 'Ingrese contraseña'),
-                'second_options' => array('label' => 'Reingrese contraseña'),
+                'first_options' => array(
+                    'label' => false,
+                    'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder' => 'Ingrese contraseña'
+                    )
+                ),
+                'second_options' => array(
+                    'label' => false,
+                    'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder' => 'Re ingrese contraseña'
+                    )
+                ),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
             ->add('nombre', 'text', array(
-                    'label' => "Ingrese nombre",
+                    'label' => false,
                     'required' => false,
+                    'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder' => 'Nombre'
+                    )                    
                 )
             )
             ->add('apellido', 'text', array(
-                    'label' => "Ingrese apellido",
+                    'label' => false,
                     'required' => false,
+                    'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder' => 'Apellido'
+                    )                    
                 )
             )
             ->add('direccion', 'text', array(
-                    'label' => "Direccion",
+                    'label' => false,
                     'required' => false,
+                    'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder' => 'Direccion'
+                    )                    
                 )
             )
             ->add('telefono', 'text', array(
-                    'label' => "Ingrese telefono",
+                    'label' => false,
                     'required' => false,
+                    'attr' => array(
+                        "class" => "form-control input-sm",
+                        'placeholder' => 'Tel.'
+                    )                    
                 )
             )
         ;
