@@ -1,21 +1,7 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
-
 {% block fos_user_content %}
-
-		{% block Javascript %}
-			<!-- Latest compiled and minified JavaScript -->
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		{% endblock Javascript %}
-
-		{% block StyleSheet %}
-			<!-- Latest compiled and minified CSS -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-			<!-- Optional theme -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-		{% endblock StyleSheet %}
-		
+		<link rel="stylesheet" href="{{ asset('bundles/sistemaperrouser/css/registration.css') }}" />
 		<div class="container">
 		    <div class="row centered-form">
 		    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -26,7 +12,7 @@
 		                    <div class="panel-body">
 							<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} 
 									method="POST" class="fos_user_registration_register">
-
+								{{ form_start(form) }}
 			                        <div class="form-group">
 			                            {{ form_widget(form.username) }}
 			                        </div>
