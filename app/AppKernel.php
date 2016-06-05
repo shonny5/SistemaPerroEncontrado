@@ -19,6 +19,10 @@ class AppKernel extends Kernel
             // Otros bundles
             new FOS\UserBundle\FOSUserBundle(),
             new AppBundle\AppBundle(),
+            new MWSimple\Bundle\AdminCrudBundle\MWSimpleAdminCrudBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),            
             // Propios bundles,
             new Sistema\PerroEncontradoBundle\SistemaPerroEncontradoBundle(),
             new Sistema\PerroUserBundle\SistemaPerroUserBundle(),

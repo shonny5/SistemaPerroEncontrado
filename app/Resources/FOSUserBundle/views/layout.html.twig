@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
+    
+
     <head>
         <meta charset="UTF-8" />
+        <title>
+            {% block title %}{% endblock %}
+            Sistema de busqueda de perros
+        </title>
     <body>
         <div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}

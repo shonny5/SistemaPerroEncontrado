@@ -1,0 +1,112 @@
+entityName: 'Perro'
+entity: 'Sistema\PerroEncontradoBundle\Entity\Perro'
+repository: 'SistemaPerroEncontradoBundle:Perro'
+index: 'admin_perro'
+new: 'admin_perro_new'
+edit: 'admin_perro_edit'
+show: 'admin_perro_show'
+create: 'admin_perro_create'
+update: 'admin_perro_update'
+delete: 'admin_perro_delete'
+export: 'admin_perro_export'
+sessionFilter: 'PerroControllerFilter'
+saveAndAdd: true
+validator: true
+fieldsindex:
+    a.id:
+        label: 'Id'
+        name: 'Id'
+        type: 'integer'
+        export: true
+    a.ubicacion:
+        label: 'Ubicacion'
+        name: 'Ubicacion'
+        type: 'string'
+        export: true
+    a.estado:
+        label: 'Estado'
+        name: 'Estado'
+        type: 'string'
+        export: true
+    a.color:
+        label: 'Color'
+        name: 'Color'
+        type: 'string'
+        export: true
+    a.fechaIngreso:
+        label: 'Fechaingreso'
+        name: 'Fechaingreso'
+        type: 'datetime'
+        date: 'Y-m-d H:i:s'
+        export: true
+    a.fechaSalida:
+        label: 'Fechasalida'
+        name: 'Fechasalida'
+        type: 'datetime'
+        date: 'Y-m-d H:i:s'
+        export: true
+    a.usuario_de_rescate:
+        label: 'Usuario_de_rescate'
+        name: 'Usuario_de_rescate'
+        type: 'MANY_TO_ONE'
+    a.propietario:
+        label: 'Propietario'
+        name: 'Propietario'
+        type: 'MANY_TO_ONE'
+fieldsshow:
+    a.id:
+        label: 'Id'
+        name: 'Id'
+        type: 'integer'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.ubicacion:
+        label: 'Ubicacion'
+        name: 'Ubicacion'
+        type: 'string'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.estado:
+        label: 'Estado'
+        name: 'Estado'
+        type: 'string'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.color:
+        label: 'Color'
+        name: 'Color'
+        type: 'string'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.fechaIngreso:
+        label: 'Fechaingreso'
+        name: 'Fechaingreso'
+        type: 'datetime'
+        date: 'Y-m-d H:i:s'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.fechaSalida:
+        label: 'Fechasalida'
+        name: 'Fechasalida'
+        type: 'datetime'
+        date: 'Y-m-d H:i:s'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.usuario_de_rescate:
+        label: 'Usuario_de_rescate'
+        name: 'Usuario_de_rescate'
+        type: 'MANY_TO_ONE'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.propietario:
+        label: 'Propietario'
+        name: 'Propietario'
+        type: 'MANY_TO_ONE'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.razas:
+        label: 'Razas'
+        name: 'Razas'
+        type: 'MANY_TO_MANY'
+        #class: 'col-lg-12'
+        #closerow: true

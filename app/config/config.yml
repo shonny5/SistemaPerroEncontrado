@@ -85,3 +85,7 @@ fos_user:
     registration:
         form:
             type: perro_user_registration
+twig:
+    form:
+        resources:
+            - LexikFormFilterBundle:Form:form_div_layout.html.twig            

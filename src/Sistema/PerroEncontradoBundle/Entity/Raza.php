@@ -30,7 +30,7 @@ class Raza
 
     /**
     *
-    * @ORM\ManyToMany(targetEntity="Perro", mappedBy="raza")
+    * @ORM\ManyToMany(targetEntity="Perro", mappedBy="razas")
     */
     private $perros;
 
