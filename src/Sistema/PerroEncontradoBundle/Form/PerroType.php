@@ -17,13 +17,7 @@ class PerroType extends AbstractType
     {
         $builder
             ->add('ubicacion')
-            ->add('estado', 'choice', array(
-                    'choices' => array(
-                        "Adoptado",
-                        "En adopcion",
-                    )
-                )
-            )
+            ->add('estado')
             ->add('color')
             ->add('fechaIngreso', 'datetime', array(
                         'placeholder' => 'Ingrese fecha de ingreso del perro.',

@@ -20,7 +20,7 @@
 
 					    	<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-					        <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
+					        <img src="{{ asset('bundles/app/images/RcmcLv4_p.png') }}" class="img-responsive" alt="" />
 
 					        <input type="text" id="username" name="_username" placeholder="Usuario o email" required="required" class="form-control input-lg" />
 					      
@@ -34,13 +34,13 @@
 					        <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
 
 					        <div>
-					        	<a href="/register">Crear cuenta</a> | <a href="/resetting">Reiniciar contraseña</a>
+					        	<a href="/register">Crear cuenta</a> | <a href="/resetting">Restablecer contraseña</a>
 					        </div>
 
 					    </form>
 					    
 					    <div class="form-links">
-					        <a href="#">www.tecspro.com.ar</a>
+					        <a href="http://www.tecspro.com.ar">www.tecspro.com.ar</a>
 					    </div>
 				    </section>  
 				</div>	  
@@ -52,12 +52,12 @@
 {% block StyleSheet %}
  	{{ parent() }}
 	               	
-	<link rel="stylesheet" href="{{ asset('bundles/sistemaperrouser/css/login.css') }}" />
+	<link rel="stylesheet" href="{{ asset('bundles/app/css/login.css') }}" />
 {% endblock StyleSheet %}
 
 {% block Javascript %}
  	{{ parent() }}
 
-    <script src="{{ asset('bundles/sistemaperrouser/js/login.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/login.js') }}"></script>
 {% endblock Javascript %}
 

@@ -2,11 +2,12 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@MWSimpleAdminCrudBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi:             ~
@@ -29,11 +30,15 @@ framework:
         handler_id:  ~
     fragments:       ~
     http_method_override: true
+    translator:      { fallback: %locale% }
 
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            - LexikFormFilterBundle:Form:form_div_layout.html.twig    
 
 # Assetic Configuration
 assetic:
@@ -85,7 +90,44 @@ fos_user:
     registration:
         form:
             type: perro_user_registration
-twig:
-    form:
-        resources:
-            - LexikFormFilterBundle:Form:form_div_layout.html.twig            
+
+knp_paginator:
+    page_range: 10                      # default page range used in pagination control
+    default_options:
+        page_name: page                # page query parameter name
+        sort_field_name: sort          # sort field query parameter name
+        sort_direction_name: direction # sort direction query parameter name
+        distinct: true                 # ensure distinct results, useful when ORM queries are using GROUP BY statements
+    template:
+        # pagination: KnpPaginatorBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig # bootstrap 3 sliding pagination controls template
+        pagination: MWSimpleAdminCrudBundle:Pagination:twitter_bootstrap_v3_pagination.html.twig # bootstrap 3 sliding pagination controls template
+        sortable: KnpPaginatorBundle:Pagination:sortable_link.html.twig # sort link template
+knp_menu:
+    twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer
+        template: MWSimpleAdminCrudBundle:Menu:knp_menu.html.twig
+    templating: false # if true, enables the helper for PHP templates
+    default_renderer: twig # The renderer to use, list is also available by default
+
+mw_simple_admin_crud:
+    menu_setting: { class: nav } # use nav
+    menu:
+        item_perro: { name: Listado de perros, url: admin_perro, id: perro }
+        item_propietario: { name: Listado de propietarios, url: admin_propietario, id: propietario }
+
+        #child: { name: inicio, url: mws_admin_crud_menu, id: inicio, icon: glyphicon glyphicon-home }
+        #child2:  
+        #    name: help
+        #    url: null
+        #    id: help
+        #    subMenu:
+        #        indice:
+        #            name: indice
+        #            url: admin_indice
+        #            icon: glyphicon glyphicon-home
+        #            roles: ['ROLE_ADMIN']
+        #    roles: ['ROLE_USER']
+        #child3: 
+        #    name: Usuario
+        #    url: admin_user
+        #    id: usuario
+        #    roles: ['ROLE_SUPERADMIN']

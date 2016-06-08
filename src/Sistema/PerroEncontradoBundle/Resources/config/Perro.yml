@@ -34,19 +34,19 @@ fieldsindex:
         type: 'string'
         export: true
     a.fechaIngreso:
-        label: 'Fechaingreso'
+        label: 'Fecha de ingreso'
         name: 'Fechaingreso'
         type: 'datetime'
         date: 'Y-m-d H:i:s'
         export: true
     a.fechaSalida:
-        label: 'Fechasalida'
+        label: 'Fecha de salida'
         name: 'Fechasalida'
         type: 'datetime'
         date: 'Y-m-d H:i:s'
         export: true
     a.usuario_de_rescate:
-        label: 'Usuario_de_rescate'
+        label: 'Usuario de rescate'
         name: 'Usuario_de_rescate'
         type: 'MANY_TO_ONE'
     a.propietario:
@@ -79,21 +79,21 @@ fieldsshow:
         #class: 'col-lg-12'
         #closerow: true
     a.fechaIngreso:
-        label: 'Fechaingreso'
+        label: 'Fecha de ingreso'
         name: 'Fechaingreso'
         type: 'datetime'
         date: 'Y-m-d H:i:s'
         #class: 'col-lg-12'
         #closerow: true
     a.fechaSalida:
-        label: 'Fechasalida'
+        label: 'Fecha de salida'
         name: 'Fechasalida'
         type: 'datetime'
         date: 'Y-m-d H:i:s'
         #class: 'col-lg-12'
         #closerow: true
     a.usuario_de_rescate:
-        label: 'Usuario_de_rescate'
+        label: 'Usuario de rescate'
         name: 'Usuario_de_rescate'
         type: 'MANY_TO_ONE'
         #class: 'col-lg-12'
