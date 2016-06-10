@@ -111,7 +111,19 @@ knp_menu:
 mw_simple_admin_crud:
     menu_setting: { class: nav } # use nav
     menu:
-        item_perro: { name: Listado de perros, url: admin_perro, id: perro }
+        item_admin_perros:
+            name: Administracion de Caninos
+            url: null
+            id: adminCaninos
+            subMenu:
+                Caninos:
+                    name: Listado de perros
+                    url: admin_perro
+                    id: perro 
+                Razas:
+                    name: Gestion de Razas
+                    url: admin_raza
+                    id: raza
         item_propietario: { name: Listado de propietarios, url: admin_propietario, id: propietario }
 
         #child: { name: inicio, url: mws_admin_crud_menu, id: inicio, icon: glyphicon glyphicon-home }

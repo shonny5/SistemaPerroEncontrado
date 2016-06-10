@@ -57,6 +57,12 @@ class User extends baseUser
     */
     private $perros_encontrados;
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->addRole("ROLE_RESCATISTA");
+    }
+
     /**
      * Get id
      *

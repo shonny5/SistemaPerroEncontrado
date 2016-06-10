@@ -1,0 +1,77 @@
+entityName: 'User'
+entity: 'Sistema\PerroUserBundle\Entity\User'
+repository: 'SistemaPerroUserBundle:User'
+index: 'superadmin_user'
+new: 'superadmin_user_new'
+edit: 'superadmin_user_edit'
+show: 'superadmin_user_show'
+create: 'superadmin_user_create'
+update: 'superadmin_user_update'
+delete: 'superadmin_user_delete'
+export: 'superadmin_user_export'
+sessionFilter: 'UserControllerFilter'
+saveAndAdd: true
+validator: true
+fieldsindex:
+    a.id:
+        label: 'Id'
+        name: 'Id'
+        type: 'integer'
+        export: true
+    a.nombre:
+        label: 'Nombre'
+        name: 'Nombre'
+        type: 'string'
+        export: true
+    a.apellido:
+        label: 'Apellido'
+        name: 'Apellido'
+        type: 'string'
+        export: true
+    a.direccion:
+        label: 'Direccion'
+        name: 'Direccion'
+        type: 'string'
+        export: true
+    a.telefono:
+        label: 'Telefono'
+        name: 'Telefono'
+        type: 'string'
+        export: true
+fieldsshow:
+    a.id:
+        label: 'Id'
+        name: 'Id'
+        type: 'integer'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.nombre:
+        label: 'Nombre'
+        name: 'Nombre'
+        type: 'string'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.apellido:
+        label: 'Apellido'
+        name: 'Apellido'
+        type: 'string'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.direccion:
+        label: 'Direccion'
+        name: 'Direccion'
+        type: 'string'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.telefono:
+        label: 'Telefono'
+        name: 'Telefono'
+        type: 'string'
+        #class: 'col-lg-12'
+        #closerow: true
+    a.perros_encontrados:
+        label: 'Perros_encontrados'
+        name: 'Perros_encontrados'
+        type: 'ONE_TO_MANY'
+        #class: 'col-lg-12'
+        #closerow: true
