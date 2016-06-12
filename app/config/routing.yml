@@ -34,4 +34,4 @@ fos_user_change_password:
 mw_simple_admin_crud:
     resource: "@MWSimpleAdminCrudBundle/Controller/"
     type:     annotation
-    prefix:   /admin    
+    prefix:   /admin
